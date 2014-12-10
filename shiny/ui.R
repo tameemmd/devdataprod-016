@@ -6,8 +6,9 @@ shinyUI(fluidPage(
     fluidRow(
         column(2,
                radioButtons("choice", "Analyse by:",
-                            c("Sex" = "S", "Age Group" = "A"), "S"),
-               br()
+                            c("Sex" = "S", "Age Group" = "A", "Travel Route" = "T"), "S"),
+               br(),
+               selectInput('type', 'Chart type:', c("Bar", "Box Plot"))
         ),
         column(8,
                plotOutput('plotOutput')

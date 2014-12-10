@@ -28,44 +28,58 @@ loadData <- function() {
         data <- data[complete.cases(data),]  # keep only complete entries
         
         # remove the data is not needed for this analysis
-        data <- data[c(4:9),]
+        data <- data[c(2:9),]
         
         dataM <- melt(data, id.vars = c("X"))
         
-        # split the data sets
+        # split the data sets (Sex)
         dataSex <- subset(dataM, X == "Males" | X == "Females")
         colnames(dataSex) <- c("Sex", "Month", "Tourists")
         # clear existing factor information and refactorize
         dataSex$Sex <- as.factor(as.character(dataSex$Sex))
         dataSex$Tourists <- as.numeric(gsub(",","", dataSex$Tourists))
+     
+        # split the data sets (Travel Route)
+        dataRoute <- subset(dataM, X == "Air" | X == "Sea")
+        colnames(dataRoute) <- c("Route", "Month", "Tourists")
+        # clear existing factor information and refactorize
+        dataRoute$Route <- as.factor(as.character(dataRoute$Route))
+        dataRoute$Tourists <- as.numeric(gsub(",","", dataRoute$Tourists))
         
-        dataAgeG <- subset(dataM, X != "Males" & X != "Females")
+        # split the data sets (Age Group)
+        dataAgeG <- subset(dataM, X == "0-24" | X == "25-44" | X == "45-64" | X == "65+")
         colnames(dataAgeG) <- c("AgeG", "Month", "Tourists")
         # clear existing factor information and refactorize
         dataAgeG$AgeG <- as.factor(as.character(dataAgeG$AgeG))
         dataAgeG$Tourists <- as.numeric(gsub(",","", dataAgeG$Tourists))
         
-        save(dataSex, dataAgeG, downloadDt, file=rData)
+        save(dataSex, dataAgeG, dataRoute, downloadDt, file=rData)
         
     }
     
-    return (list(dataSex = dataSex, dataAgeG = dataAgeG))
+    return (list(dataSex = dataSex, dataRoute = dataRoute, dataAgeG = dataAgeG))
 }
 
 data <- loadData()
 dataSex <- data$dataSex
+dataRoute <- data$dataRoute
 dataAgeG <- data$dataAgeG
 rm(data)
 
 summary(dataSex)
-
-
+library(scales)
+## by Sex
 g <- ggplot(dataSex, aes(y=Tourists, x=Month, fill=Sex)) + geom_bar(stat="identity")
 g <- g + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
     ggtitle("Tourist Expenditure\nin Malta by Sex") + xlab("2012") + ylab("Euro")
 g
     
 
+
+g <- ggplot(dataSex, aes(factor(Sex), Tourists)) 
+g + geom_boxplot() + ggtitle("Tourist Expenditure\nin Malta by Sex") + xlab("2012") +
+    scale_y_continuous(name="Euro", labels = comma)
+           
 ### by Agegroup
 g <- ggplot(dataAgeG, aes(y=Tourists, x=Month, fill=AgeG)) + geom_bar(stat="identity")
 g <- g + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
