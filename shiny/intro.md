@@ -1,20 +1,11 @@
----
-title: "Maltese Tourist Analysis for 2012"
-author: "Alan C Bonnici"
-date: "Wednesday, December 10, 2014"
-output:
-  html_document:
-    keep_md: yes
----
+# Maltese Tourist Analysis for 2012
+Alan C Bonnici  
+Wednesday, December 10, 2014  
 
 
 ## Project Data
 
-```{r results='hide',echo=FALSE}
-    url = "http://www.opendatamalta.org/ckan/dataset/50cfd96f-246e-4d57-a0ce-86c8ce88e9d6/resource/fad12a26-2965-404f-9320-c0bc82353315/download/Profileofdepartingtourists2012.csv"
-    rData = "../shiny/tourists2012.Rdata"
-    load(rData)
-```
+
 
 
 This document analyses data available for public download from the Open Data Malta website. The dataset being analysed deals with a breakdown of tourist expenditure for the year 2012 by Sex, Age Group and Travel Route (sea or air).
@@ -29,7 +20,7 @@ Computed is the average number of tourists per month.
 
 ======================================================================================================
 
-The data is publically available from `r url`. It was downloaded on **`r downloadDt`**.
+The data is publically available from http://www.opendatamalta.org/ckan/dataset/50cfd96f-246e-4d57-a0ce-86c8ce88e9d6/resource/fad12a26-2965-404f-9320-c0bc82353315/download/Profileofdepartingtourists2012.csv. It was downloaded on **10 December 2014**.
 
 The data had to be cleaned up and reprocessed in order to get it into a format that is usable in this app.
 

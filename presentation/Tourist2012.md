@@ -1,0 +1,63 @@
+Maltese Tourist Analysis for 2012
+========================================================
+author: Alan C. Bonnici
+date: 10th December 2014
+***
+<br>
+<br>
+<br>
+***
+![Maltese Islands](Malta.jpg)
+
+
+First Slide
+========================================================
+
+
+The shiny app analysis open data available from the **Open Data Malta** web site.
+
+The data anlysed relates to tourists vising Malta during 2012. The source of the data is http://www.opendatamalta.org/ckan/dataset/50cfd96f-246e-4d57-a0ce-86c8ce88e9d6/resource/fad12a26-2965-404f-9320-c0bc82353315/download/Profileofdepartingtourists2012.csv.  
+
+It was downloaded on **10 December 2014**. 
+
+
+Data Cleansing
+========================================================
+
+The data was cleaned and reorganised. The data selected for this presention consisted of monthly tourist visits organised by:
+
+* Sex (*Male* / *Female*)
+* Age Bracket (*0-24* / *25-44* / *45-64* / *65+*)
+* Travel Mode (*Air* / *Sea*)
+
+For each data grouping the following information was graphed:
+
+* Stacked Bar Chart
+* Bar Chart
+* Box Plot
+
+
+Data Sample
+========================================================
+
+Below is a sample of the data used to analyse tourists accoring to their Sex.
+
+
+```
+Sex Month Tourists
+Males   January  32146
+Females January  29208
+Males   February 35120
+Females February 26669
+Males   March    43463
+Females March    36679
+Males   April    63019
+Females April    59959
+Males   May      69756
+Females May      63892
+```
+
+
+Screen shot of the competed app
+========================================================
+
