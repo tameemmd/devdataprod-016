@@ -5,6 +5,7 @@ date: "Wednesday, December 10, 2014"
 output: html_document
 ---
 
+
 ## Project Data
 
 ```{r results='hide',echo=FALSE}
@@ -30,5 +31,4 @@ This repo contains all the code and data making up this solution. The files and 
 2  **/code/code.R** - The code that was used to download and clean up the data.  
 3  */data* - The data used in this project.  
 4  */shiny* - The code used in the creation of the shiny solution.  
-
 
