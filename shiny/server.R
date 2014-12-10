@@ -1,7 +1,7 @@
 library(shiny)
 library(ggplot2)
 library(scales)
-rData = "../data/tourists2012.Rdata"
+rData = "tourists2012.Rdata"
 load(rData)
 
 shinyServer(

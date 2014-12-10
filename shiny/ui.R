@@ -18,7 +18,7 @@ shinyUI(fluidPage(
     
     fluidRow(
         column(8, offset = 2,
-               includeMarkdown("intro.Rmd")
+               includeMarkdown("intro.html")
         )
     ),
     

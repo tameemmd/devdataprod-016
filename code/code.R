@@ -6,7 +6,7 @@ library(reshape2)
 loadData <- function() {
     url = "http://www.opendatamalta.org/ckan/dataset/50cfd96f-246e-4d57-a0ce-86c8ce88e9d6/resource/fad12a26-2965-404f-9320-c0bc82353315/download/Profileofdepartingtourists2012.csv"
     file = "../data/tourists2012.csv"
-    rData = "../data/tourists2012.Rdata"
+    rData = "../shiny/tourists2012.Rdata"
     
     if (file.exists(rData)) {
         load(rData)
