@@ -5,13 +5,12 @@ shinyUI(fluidPage(
     
     fluidRow(
         column(2,
-               radioButtons("id1", "Analyse by",
-                            c("Sex" = "1",
-                            "Age Group" = "2")
-         )),
+               radioButtons("choice", "Analyse by:",
+                            c("Sex" = "S", "Age Group" = "A"), "S"),
+               br()
+        ),
         column(8,
-               h4('You entered'),
-               verbatimTextOutput("oid1")
+               plotOutput('plotOutput')
         )),
 
     hr(),

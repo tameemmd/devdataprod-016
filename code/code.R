@@ -53,3 +53,23 @@ loadData <- function() {
 }
 
 data <- loadData()
+dataSex <- data$dataSex
+dataAgeG <- data$dataAgeG
+rm(data)
+
+summary(dataSex)
+
+
+g <- ggplot(dataSex, aes(y=Tourists, x=Month, fill=Sex)) + geom_bar(stat="identity")
+g <- g + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
+    ggtitle("Tourist Expenditure\nin Malta by Sex") + xlab("2012") + ylab("Euro")
+g
+    
+
+### by Agegroup
+g <- ggplot(dataAgeG, aes(y=Tourists, x=Month, fill=AgeG)) + geom_bar(stat="identity")
+g <- g + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
+    ggtitle("Tourist Expenditure\nin Malta by Age Group") + xlab("2012") + ylab("Euro")
+g
+
+    
