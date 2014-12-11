@@ -9,6 +9,11 @@ shinyServer(
         output$meanTourist <- renderPrint(mean(dataSex$Tourists)*2)
         output$plotOutput <- renderPlot({
             if (input$choice == "S") {
+                
+                ag <- aggregate(Tourists ~ Sex, dataSex, function(x) c(Mean = mean(x), Std.Dev=sd(x)))
+                colnames(ag)[2] <- ""  # Clear out the word Tourist
+                output$aggTourist <- renderPrint(ag)
+                
                 if (input$type == "Stacked Bar") {
                     g <- ggplot(dataSex, aes(x=Month, y=Tourists, fill=Sex)) + 
                         geom_bar(stat="identity") +
@@ -31,6 +36,11 @@ shinyServer(
                         scale_y_continuous(name="Euro", labels = comma)
                 }
             } else if (input$choice == "A") {
+
+                ag <- aggregate(Tourists ~ AgeG, dataAgeG, function(x) c(Mean = mean(x), Std.Dev=sd(x)))
+                colnames(ag)[2] <- ""  # Clear out the word Tourist
+                output$aggTourist <- renderPrint(ag)
+                
                 if (input$type == "Stacked Bar") {
                     g <- ggplot(dataAgeG, aes(y=Tourists, x=Month, fill=AgeG)) + 
                         geom_bar(stat="identity") +
@@ -54,6 +64,11 @@ shinyServer(
                 }
             }
             else {
+                
+                ag <- aggregate(Tourists ~ Route, dataRoute, function(x) c(Mean = mean(x), Std.Dev=sd(x)))
+                colnames(ag)[2] <- ""  # Clear out the word Tourist
+                output$aggTourist <- renderPrint(ag)
+                
                 if (input$type == "Stacked Bar") {
                     g <- ggplot(dataRoute, aes(y=Tourists, x=Month, fill=Route)) + 
                         geom_bar(stat="identity") +

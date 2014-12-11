@@ -20,7 +20,7 @@ Computed is the average number of tourists per month.
 
 ======================================================================================================
 
-The data is publically available from http://www.opendatamalta.org/ckan/dataset/50cfd96f-246e-4d57-a0ce-86c8ce88e9d6/resource/fad12a26-2965-404f-9320-c0bc82353315/download/Profileofdepartingtourists2012.csv. It was downloaded on **10 December 2014**.
+The data is publicly available from http://www.opendatamalta.org/ckan/dataset/50cfd96f-246e-4d57-a0ce-86c8ce88e9d6/resource/fad12a26-2965-404f-9320-c0bc82353315/download/Profileofdepartingtourists2012.csv. It was downloaded on **10 December 2014**.
 
 The data had to be cleaned up and reprocessed in order to get it into a format that is usable in this app.
 
@@ -33,6 +33,7 @@ This repo contains all the code and data making up this solution. The files and 
 1  **README.md** - Text file that lists the project question and points to this file.  
 2  **/code/code.R** - The code that was used to download and clean up the data.  
 3  */data* - The data used in this project.  
-4  */shiny* - The code used in the creation of the shiny solution. 
-5  */presentation* - The R Markdown used to create the RStudio Presenter presnetation.
+4  */shiny* - The code used in the creation of the shiny solution.  
+5  */presentation* - The R Markdown used to create the RStudio Presenter presentation.  
+6  */support* - Other files used in the creation of the solution.  
 

@@ -10,13 +10,13 @@ date: 10th December 2014
 ![Maltese Islands](Malta.jpg)
 
 
-First Slide
+The Data
 ========================================================
 
 
 The shiny app analysis open data available from the **Open Data Malta** web site.
 
-The data anlysed relates to tourists vising Malta during 2012. The source of the data is http://www.opendatamalta.org/ckan/dataset/50cfd96f-246e-4d57-a0ce-86c8ce88e9d6/resource/fad12a26-2965-404f-9320-c0bc82353315/download/Profileofdepartingtourists2012.csv.  
+The data analysed relates to tourists visiting Malta during 2012. The source of the data is http://www.opendatamalta.org/ckan/dataset/50cfd96f-246e-4d57-a0ce-86c8ce88e9d6/resource/fad12a26-2965-404f-9320-c0bc82353315/download/Profileofdepartingtourists2012.csv.  
 
 It was downloaded on **10 December 2014**. 
 
@@ -24,7 +24,7 @@ It was downloaded on **10 December 2014**.
 Data Cleansing
 ========================================================
 
-The data was cleaned and reorganised. The data selected for this presention consisted of monthly tourist visits organised by:
+The data was cleaned and reorganised. The data selected for this presentation consisted of monthly tourist visits organised by:
 
 * Sex (*Male* / *Female*)
 * Age Bracket (*0-24* / *25-44* / *45-64* / *65+*)
@@ -37,11 +37,20 @@ For each data grouping the following information was graphed:
 * Box Plot
 
 
-Data Sample
+Additional Stats
 ========================================================
 
-Below is a sample of the data used to analyse tourists accoring to their Sex.
+<small>
+Mean and standard deviation information is computed according to the different groupings. 
 
+The year average of the entire data set is shown in all cases.
+
+Below is a sample of the data organised by Sex.
+
+
+```r
+write.table(format(dataSex[1:7, ], justify="left"), row.names=FALSE, col.names=TRUE,quote=FALSE)
+```
 
 ```
 Sex Month Tourists
@@ -52,12 +61,11 @@ Females February 26669
 Males   March    43463
 Females March    36679
 Males   April    63019
-Females April    59959
-Males   May      69756
-Females May      63892
 ```
+</small>
 
 
-Screen shot of the competed app
+Annotated screen shot of app
 ========================================================
-
+![Shinyapp Screen Shot](shinyapp.jpg)  
+<center><a href="https://chribonn.shinyapps.io/devdataprod-016/" target="_blank">Click here to run app</a></center>

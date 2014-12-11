@@ -14,7 +14,10 @@ shinyUI(fluidPage(
                plotOutput('plotOutput'),
                br(),
                p('The average number of tourists per month was '),
-               verbatimTextOutput("meanTourist")
+               verbatimTextOutput("meanTourist"),
+               br(),
+               p('Mean and Standard Deviation information for this data '),
+               verbatimTextOutput("aggTourist")             
         )),
 
     hr(),

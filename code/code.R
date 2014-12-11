@@ -38,6 +38,7 @@ loadData <- function() {
         # clear existing factor information and refactorize
         dataSex$Sex <- as.factor(as.character(dataSex$Sex))
         dataSex$Tourists <- as.numeric(gsub(",","", dataSex$Tourists))
+        row.names(dataSex) <- NULL
      
         # split the data sets (Travel Route)
         dataRoute <- subset(dataM, X == "Air" | X == "Sea")
@@ -45,6 +46,7 @@ loadData <- function() {
         # clear existing factor information and refactorize
         dataRoute$Route <- as.factor(as.character(dataRoute$Route))
         dataRoute$Tourists <- as.numeric(gsub(",","", dataRoute$Tourists))
+        row.names(dataRoute) <- NULL
         
         # split the data sets (Age Group)
         dataAgeG <- subset(dataM, X == "0-24" | X == "25-44" | X == "45-64" | X == "65+")
@@ -52,6 +54,7 @@ loadData <- function() {
         # clear existing factor information and refactorize
         dataAgeG$AgeG <- as.factor(as.character(dataAgeG$AgeG))
         dataAgeG$Tourists <- as.numeric(gsub(",","", dataAgeG$Tourists))
+        row.names(dataAgeG) <- NULL
         
         save(dataSex, dataAgeG, dataRoute, downloadDt, file=rData)
         
@@ -86,4 +89,7 @@ g <- g + theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
     ggtitle("Tourist Expenditure\nin Malta by Age Group") + xlab("2012") + ylab("Euro")
 g
 
-    
+# Aggregate functions
+ag <- aggregate(Tourists ~ Sex, dataSex, function(x) c(mean = mean(x), sd=sd(x)))
+colnames(ag)[2] <- ""
+colnames

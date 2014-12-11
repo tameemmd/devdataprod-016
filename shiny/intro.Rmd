@@ -29,7 +29,7 @@ Computed is the average number of tourists per month.
 
 ======================================================================================================
 
-The data is publically available from `r url`. It was downloaded on **`r downloadDt`**.
+The data is publicly available from `r url`. It was downloaded on **`r downloadDt`**.
 
 The data had to be cleaned up and reprocessed in order to get it into a format that is usable in this app.
 
@@ -42,6 +42,7 @@ This repo contains all the code and data making up this solution. The files and 
 1  **README.md** - Text file that lists the project question and points to this file.  
 2  **/code/code.R** - The code that was used to download and clean up the data.  
 3  */data* - The data used in this project.  
-4  */shiny* - The code used in the creation of the shiny solution. 
-5  */presentation* - The R Markdown used to create the RStudio Presenter presnetation.
+4  */shiny* - The code used in the creation of the shiny solution.  
+5  */presentation* - The R Markdown used to create the RStudio Presenter presentation.  
+6  */support* - Other files used in the creation of the solution.  
 
