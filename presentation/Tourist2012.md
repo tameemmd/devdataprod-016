@@ -1,7 +1,7 @@
 Maltese Tourist Analysis for 2012
 ========================================================
-author: Alan C. Bonnici
-date: 10th December 2014
+author: Tameem
+date: 20th April 2015
 ***
 <br>
 <br>
@@ -18,7 +18,7 @@ The shiny app analysis open data available from the **Open Data Malta** web site
 
 The data analysed relates to tourists visiting Malta during 2012. The source of the data is http://www.opendatamalta.org/ckan/dataset/50cfd96f-246e-4d57-a0ce-86c8ce88e9d6/resource/fad12a26-2965-404f-9320-c0bc82353315/download/Profileofdepartingtourists2012.csv.  
 
-It was downloaded on **10 December 2014**. 
+It was downloaded on 20 April 2015. 
 
 
 Data Cleansing
@@ -68,4 +68,6 @@ Males   April    63019
 Annotated screen shot of app
 ========================================================
 ![Shinyapp Screen Shot](shinyapp.jpg)  
-<center><a href="https://chribonn.shinyapps.io/devdataprod-016/" target="_blank">Click here to run app</a></center>
+
+
+Thank You!
